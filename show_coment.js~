@@ -1,0 +1,8 @@
+function show_coments(showc, idea_id)
+{
+	if(showc == "show");			
+		$("#cidea_"+idea_id).css("display","");
+	else			
+		$("#cidea_"+idea_id).css("display","none");
+}
+

@@ -1,0 +1,133 @@
+<?
+//	SECTION
+// Constant that allow access to the required files.
+	define("IDEA",1);
+//	END SECTION
+	require_once("include/include.php");
+
+	if(!isset($_SESSION['logged_in'])){
+		header("Location: index.php");
+		exit;
+	}	
+	
+	$q2 = mysql_query("SELECT nome FROM `user` WHERE id = '".$_SESSION['profile_id']."'");
+	$_AUTOR = mysql_fetch_array($q2);
+	echo 'Suas Idéias<br><br>';
+
+	$ideas = mysql_query("	SELECT  texto, id, data
+				FROM  idea
+				WHERE autor != '".$_SESSION['profile_id']."'");
+
+
+	
+	while($idea = mysql_fetch_array($ideas))
+	{
+		//Idéias e seus patrocinadores
+		if($_POST && isset($_POST['like']) && $_POST['like'] == SECURITY && $_POST['id_idea'] == $idea['id']){
+			mysql_query("	INSERT INTO  `like_idea` (`user`,`idea`,`data`)
+					VALUES ('".$_SESSION['profile_id']."', '".$idea['id']."'  , UNIX_TIMESTAMP(NOW()));");
+		}
+
+		if($_POST && isset($_POST['unlike']) && $_POST['unlike'] == SECURITY && $_POST['id_idea'] == $idea['id']){
+			mysql_query("	DELETE FROM `like_idea`  
+					WHERE user = '".$_SESSION['profile_id']."' AND idea = '".$idea['id']."';");
+		}
+
+		$sponsor = mysql_query("SELECT count(*) as likes FROM like_idea WHERE idea='".$idea['id']."'");
+		$n_sponsors= mysql_fetch_array($sponsor);
+		$i_spons = mysql_query("SELECT * FROM like_idea WHERE idea='".$idea['id']."' and user = '".$_SESSION['profile_id']."'");	
+		echo 	'<div name=idea_'.$idea['id'].'>'
+				.$idea['texto'].
+				'<br><br>Postado em '.date("r",$idea['data']).
+				'
+				<form method="post">'.
+					$n_sponsors['likes'].' pessoa(s) Patrocinaram isso. 
+					<input type="hidden" name="id_idea" value="'.$idea['id'].'">';
+
+					if(mysql_num_rows($i_spons)){
+
+						echo '<input type="submit" value="Despatrocinar" /> 
+						<input type="hidden" name="unlike" value="'.$_SESSION['s'].'">
+				</form>';} else { echo '
+						<input type="submit" value="Patrocinar" /> 
+						<input type="hidden" name="like" value="'.$_SESSION['s'].'">
+				</form>';} 
+
+		//Comentários e seus patrocinadores
+//		$ops = mysql_query("SELECT count(*) as opinions FROM `comment`,`user` WHERE `comment`.autor=`user`.id AND idea = '".$idea['id']."'");
+//		$n_ops = mysql_fetch_array($ops);
+		echo		'
+				Opine: <br>';
+		echo		'<form method="post">
+					<table>
+					<tr>
+						<td id="show'.$idea['id'].'">
+							Mostrar opiniões
+						</td>
+						<td id="hide'.$idea['id'].'" style="display:none;">
+							Ocultar opiniões
+						</td>
+						<td>
+							<input type="checkbox" id="showit'.$idea['id'].'" value ="'.$idea['id'].'" onclick="show_it(value)"><br>
+						</td>
+					</tr>';
+				echo '
+					<tr>
+						<textarea name="c"></textarea>
+					</tr>
+					<tr>
+						<input type="hidden" name="s" value="'.$_SESSION['s'].'">
+						<input type="submit" value="Enviar" /> 
+					</tr>
+					</table>
+				</form>';
+		echo 		'<div id="cidea_'.$idea['id'].'" style="display:none;">';
+		$q3 = mysql_query("SELECT * FROM `comment`,`user` WHERE `comment`.autor=`user`.id AND idea = '".$idea['id']."'");
+				while($coment_ifo = mysql_fetch_array($q3)){
+						if($_POST && isset($_POST['like_c']) && $_POST['like_c'] == SECURITY && $_POST['cid'] == $coment_ifo[0]){
+							mysql_query("	INSERT INTO  `like_comment` (`user`,`comment`,`data`)
+									VALUES ('".$_SESSION['profile_id']."', '".((int) $_POST['cid'])."'  , UNIX_TIMESTAMP(NOW()));");
+						}
+	
+						if($_POST && isset($_POST['unlike_c']) && $_POST['unlike_c'] == SECURITY && $_POST['cid'] == $coment_ifo[0]){
+							mysql_query("	DELETE FROM `like_comment` 
+									WHERE user = '".$_SESSION['profile_id']."' AND comment = '".((int) $_POST['cid'])."';");
+						}
+	
+						$c_sponsor = mysql_query("SELECT count(*) as likes FROM like_comment WHERE comment='".((int) $coment_ifo[0])."'");
+						$nc_sponsors= mysql_fetch_array($c_sponsor);
+	
+						echo '<pre>'.
+							htmlentities($coment_ifo['texto']).
+						'</pre>'.
+						'Postado em '.date("r",$coment_ifo['data']).' por '.$coment_ifo['nome'].'
+						<form method="post">'
+							.$nc_sponsors['likes'].' pessoa(s) Patrocinaram isso.
+							<!--input type="hidden" name="id_coment" value="'.$idea['id'].'"-->';
+		
+							$i_spons = mysql_query("SELECT * FROM like_comment WHERE comment='".((int) $coment_ifo[0])."' and user = '".$_SESSION['profile_id']."'");
+							if(mysql_num_rows($i_spons)){
+		
+								echo '<input type="submit" value="Despatrocinar" /> 
+								<input type="hidden" name="unlike_c" value="'.$_SESSION['s'].'">
+								<input type="hidden" name="cid" value="'.$coment_ifo[0].'">
+						</form>';
+							 } else { echo '
+								<input type="submit" value="Patrocinar" /> 
+								<input type="hidden" name="like_c" value="'.$_SESSION['s'].'">
+								<input type="hidden" name="cid" value="'.$coment_ifo[0].'">
+						</form>';
+						 }
+				} 
+		
+		echo 
+				'</div>	
+
+	
+			</div> <br><br>'
+		;
+
+	}
+	
+
+?>

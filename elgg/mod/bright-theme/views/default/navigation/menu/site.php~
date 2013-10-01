@@ -1,0 +1,14 @@
+<?php
+/**
+ * Site navigation menu
+ *
+ * @uses $vars['menu']['default']
+ * @uses $vars['menu']['more']
+ */
+
+$default_items = elgg_extract('default', $vars['menu'], array());
+$more_items = elgg_extract('more', $vars['menu'], array());
+
+echo '<ul class="elgg-menu elgg-menu-site elgg-menu-site-default clearfix">';
+
+echo '</ul>';

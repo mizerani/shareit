@@ -1,0 +1,25 @@
+birth;sex;born;live;languages;native language;speaking;reading;writing;start learning;everyday_years;everyday_months;week_percent;working;reading for studies;writing pappers;reading pleasure;talking;groups;tv;songs;emails;lived abroad; abroad long;abroad percentbi_eng
+
+bi_eng;03/03/1972;Male;Recife;BH;port;port;on;on;on;on;2000;10;;10;on;on;on;on;on;on;on;on;on;on;no;;;0000
+bi_eng;03/03/1972;Male;Recife;BH;port;port;on;on;on;on;2000;10;;10;on;on;on;on;on;on;on;on;on;on;no;;;0000
+bi_eng;;;;;;;;;;no;;;0001
+bi_eng;;;;;;;;;;no;;;0001
+bi_eng;08/01/1970;Male;Brazil;Brazil;None;Brazilian Portuguese;on;on;on;on;1982;25;;50;on;on;on;on;on;on;on;on;on;on;yes;13;80;0002
+bi_eng;;;;;;;;;;no;;;;0000
+bi_eng;08/01/2010;Male;Brazil;Brazil;Portuguese;Portuguese;on;on;on;on;1982;24;;;on;on;on;on;on;on;on;on;on;on;yes;1;;80;0001
+bi_eng;02/15/1989;Female;Minas Gerais;Minas Gerais;Italian and Portuguese;Portuguese;on;on;on;on;2000;6;0;40;on;on;on;on;on;on;on;on;on;on;no;;;;0002
+bi_eng;08/19/1983;Female;Brazil;EUA;Portuguese;Brazilian Portuguese;on;on;on;on;1989;10;;90;on;on;on;on;on;on;on;on;on;on;yes;0;2;100;0003
+bi_eng;09/02/1990;Male;Philadelphia, PA, USA;West Deptford, NJ, USA;Vietnamese;English;;;;;no;;;;0004
+bi_eng;11/10/1984;Male;Brazil;Brazil;Portuguese and Spanish;Portuguese;on;on;on;on;1990;10;11;30;on;on;on;on;on;on;on;on;on;on;no;;;;0005
+bi_eng;06/01/1984;Female;Brazil;Brazil;;;;;;;no;;;;0006
+bi_eng;03/28/1983;Male;Brazil;Brazil;Portuguese;Portuguese;on;on;on;on;1992;12;12;50;on;on;on;on;on;on;on;on;on;on;no;;;;0007
+
+
+birth=12/31/1978;Male;anywher;here;irish;English;;on;on;on;on;1978;12;1;100;on;on;on;on;on;on;on;on;on;on;on;no;;;
+birth=12/31/1978;Female;;;irish;English;;on;on;on;on;;12;1;100;on;on;on;on;on;on;on;on;on;on;on;no;;;
+
+12/31/1978;Female;;here;irish;English;;on;on;on;on;;12;1;100;on;on;on;on;on;on;on;on;on;on;on;no;;;
+12/31/1978;Female;;here;irish;English;;on;on;on;on;;12;1;100;on;on;on;on;on;on;on;on;on;on;on;no;;;
+;;;;English;;;;;;;;
+;;;;English;;;;;;;;
+12/31/1978;Female;anywher;here;irish;English;;on;on;on;on;1978;12;1;100;on;on;on;on;on;on;on;on;on;on;on;no;;;

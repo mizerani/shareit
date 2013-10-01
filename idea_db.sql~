@@ -1,0 +1,209 @@
+-- phpMyAdmin SQL Dump
+-- version 3.4.5deb1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Sep 24, 2012 at 01:38 PM
+-- Server version: 5.1.61
+-- PHP Version: 5.3.6-13ubuntu3.8
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `idea`
+--
+
+CREATE DATABASE ideia_bd;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE IF NOT EXISTS `comment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idea` int(11) NOT NULL,
+  `data` int(11) NOT NULL,
+  `autor` int(11) NOT NULL,
+  `autor_empresa` int(11) DEFAULT NULL,
+  `texto` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `autor` (`autor`),
+  KEY `autor_empresa` (`autor_empresa`),
+  KEY `idea` (`idea`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `idea`, `data`, `autor`, `autor_empresa`, `texto`) VALUES
+(2, 2, 1343398529, 2, NULL, 'Teste'),
+(3, 2, 1343398713, 2, NULL, 'Teste'),
+(4, 2, 1343398901, 2, NULL, 'teste'),
+(5, 4, 1343591963, 5, NULL, 'Essa ideia foi elaborada com parceria de Marina');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `empresa`
+--
+
+CREATE TABLE IF NOT EXISTS `empresa` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `admin` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `admin` (`admin`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `idea`
+--
+
+CREATE TABLE IF NOT EXISTS `idea` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `autor` int(11) NOT NULL,
+  `autor_empresa` int(11) DEFAULT NULL,
+  `data` int(11) NOT NULL,
+  `texto` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `autor` (`autor`),
+  KEY `autor_empresa` (`autor_empresa`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `idea`
+--
+
+INSERT INTO `idea` (`id`, `autor`, `autor_empresa`, `data`, `texto`) VALUES
+(1, 1, NULL, 0, 'Teste'),
+(2, 2, NULL, 1343396110, 'Testando nova ideia!'),
+(3, 3, NULL, 1343590720, 'Just share your idea and chande the world!'),
+(4, 5, NULL, 1343591898, 'Gostaria de um aplicativo no celular que indicasse os postos de gasolina com os menores preços emais pertos!!');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `like_comment`
+--
+
+CREATE TABLE IF NOT EXISTS `like_comment` (
+  `user` int(11) NOT NULL,
+  `comment` int(11) NOT NULL,
+  `data` int(11) NOT NULL,
+  PRIMARY KEY (`user`,`comment`),
+  KEY `comment` (`comment`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `like_comment`
+--
+
+INSERT INTO `like_comment` (`user`, `comment`, `data`) VALUES
+(2, 2, 1343398906),
+(2, 3, 1343398896),
+(2, 4, 1343398904);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `like_idea`
+--
+
+CREATE TABLE IF NOT EXISTS `like_idea` (
+  `user` int(11) NOT NULL,
+  `idea` int(11) NOT NULL,
+  `data` int(11) NOT NULL,
+  PRIMARY KEY (`user`,`idea`),
+  KEY `idea` (`idea`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `like_idea`
+--
+
+INSERT INTO `like_idea` (`user`, `idea`, `data`) VALUES
+(2, 2, 1343398905),
+(3, 3, 1343590757),
+(5, 4, 1343591930);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `nome` text NOT NULL,
+  `salt` blob NOT NULL,
+  `pass` blob NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `nome`, `salt`, `pass`) VALUES
+(1, 'teste@teste.com', '', '', ''),
+(2, 'luizin@me.com', 'Luiz Sardinha', 0xb941be00d526205971dcf7e869c9e7e31b071fed, 0x7c203824cd02957a635b338e7f5ed6eee26e87aa),
+(3, 'pitmcezarini@gmail.com', 'pitcezarini', 0x94b00ca51cd2bbca23064dac5f342384606f110a, 0x09dbe6198e4913565a18e29692d8544d4fd492d7),
+(4, 'marinamagalhaesc@gmail.con', 'Marina ', 0x29540aab6a4f9d649d8222711015a9cf1f8ec5d6, 0x22d0353972e0fe643abed354ff4fdd9cc7a9ea82),
+(5, 'rogerio42@hotmail.com', 'Rogério', 0x6846262f1fb78d0855fbcf96faa00f64298c9402, 0x8b3e772d3ae2dccd5c75ef800126550ebb30dc83),
+(6, 'alinebh15@hotmail.com', 'Aline Rocha', 0xe88d41ac5bb01f9e7e36958192f792f84b07ab14, 0xe1d097d012b2565f71b9f6aa11331eb15ac4f236);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `comment_ibfk_6` FOREIGN KEY (`idea`) REFERENCES `idea` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comment_ibfk_7` FOREIGN KEY (`autor`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `comment_ibfk_8` FOREIGN KEY (`autor_empresa`) REFERENCES `empresa` (`id`);
+
+--
+-- Constraints for table `empresa`
+--
+ALTER TABLE `empresa`
+  ADD CONSTRAINT `empresa_ibfk_1` FOREIGN KEY (`admin`) REFERENCES `user` (`id`);
+
+--
+-- Constraints for table `idea`
+--
+ALTER TABLE `idea`
+  ADD CONSTRAINT `idea_ibfk_1` FOREIGN KEY (`autor`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `idea_ibfk_2` FOREIGN KEY (`autor_empresa`) REFERENCES `empresa` (`id`);
+
+--
+-- Constraints for table `like_comment`
+--
+ALTER TABLE `like_comment`
+  ADD CONSTRAINT `like_comment_ibfk_3` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `like_comment_ibfk_4` FOREIGN KEY (`comment`) REFERENCES `comment` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `like_idea`
+--
+ALTER TABLE `like_idea`
+  ADD CONSTRAINT `like_idea_ibfk_3` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `like_idea_ibfk_4` FOREIGN KEY (`idea`) REFERENCES `idea` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

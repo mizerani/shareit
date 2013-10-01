@@ -1,0 +1,72 @@
+html{ background-image: url(images/bg.jpg); background-repeat:repeat-x;}
+#head{ padding-bottom: 150px; min-width:804px;}
+
+body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td
+{
+margin:0;
+padding:0;
+}
+
+a {
+	font-weight: bold;
+	text-transform: none;
+	color: #da2a2a;
+	text-decoration: none;
+}
+
+.switch{
+	font-weight: bold;
+	text-transform: none;
+	color: #000000;
+	text-decoration: none;
+}
+
+table{ 	
+	border-collapse: separate;
+	border-spacing: 0px;
+	font-size: 12px;
+	text-align:left;
+	  padding-left:0px;
+
+}
+td { border:0;
+}
+tr { border:0;
+}
+
+h1,h2,h3,h4,h5,h6,strong {
+	/*bringing boldness back to headers and the strong element*/
+	font-weight:bold; 
+}
+
+#name{
+	font-weight: bold;
+}
+
+#date{
+	font-size:xx-small;
+}
+
+#profile{
+	width:1750px;
+}
+
+#unspons{
+	float:right;
+}
+
+.ideatx{
+	height:auto;
+	width:400px;
+}
+
+.best{
+	float: left;
+	padding-left:13%;
+	margin:15px 15px auto;
+}
+
+.mine{
+	float: left;
+	margin:15px 15px auto;
+}

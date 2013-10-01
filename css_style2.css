@@ -1,0 +1,119 @@
+body{
+  background-image: url(images/bg.jpg); 
+  background-position: top;
+	background-color: #f7fcf8;
+  background-repeat: repeat-x;
+  background-attachment: scroll;
+  margin: 50px 0px;
+	padding:0px;
+	border:0;		
+  text-align: center;
+}
+
+
+#header {
+    
+}
+
+
+.logo {
+	background-image: url(images/logo.png);
+	background-repeat: no-repeat;
+	text-decoration: none;
+  
+	margin-top: 7px;  
+	margin-right:5%;
+	float: left;
+	height: 135px;
+	width: 128px;
+	padding: 0px;
+  
+}
+.menu_area {
+	float: left;
+	margin:0 13% 15px;
+  width: 100%;
+  padding:0;
+}
+
+.menu_text {
+	font-family: Arial;
+	font-size: 10px;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.ideas:hover,
+.ideas {
+  background-image: url(images/menu_01.png);
+	font-family: Arial;
+	font-size: 31px;
+	font-weight: normal;
+	color: #5a5a5a;
+	background-repeat: no-repeat;
+	margin-top:50px;
+	float: left;
+	height: 50px;
+	width: 100px;
+	padding:23px 0 0 34px;
+  text-decoration:none;
+  text-transform:capitalize;
+}
+
+.links:hover,
+.links {
+	background-image: url(images/menu_02.png);
+	font-family: Arial;
+	font-size: 31px;
+	font-weight: normal;
+	color: #5a5a5a;
+	background-repeat: no-repeat;
+	margin-top:50px;
+	float: left;
+	height: 50px;
+	width: 100px;
+  padding:23px 7px 0 42px;
+  text-decoration:none;
+  text-transform:capitalize;
+}
+
+.info:hover,
+.info {
+	background-image: url(images/menu_03.png);
+  font-family: Arial;
+	font-size: 31px;
+	font-weight: normal;
+	color: #5a5a5a;
+	background-repeat: no-repeat;
+	margin-top:50px;
+	float: left;
+	height: 50px;
+	width: 100px;
+	padding:23px 0 0 34px;
+  text-decoration:none;
+  text-transform:capitalize;
+}
+
+.works:hover,
+.works {
+	background-image: url(images/menu_04.png);
+  font-family: Arial;
+	font-size: 31px;
+	font-weight: normal;
+	color: #5a5a5a;
+	background-repeat: no-repeat;
+	margin-top:50px;
+	float: left;
+	height: 50px;
+	width: 100px;
+	padding:23px 0 0 50px;
+  text-decoration:none;
+  text-transform:capitalize;
+}
+
+.info:hover,
+.links:hover,
+.works:hover,
+.ideas:hover {	color: #ffffff;}

@@ -1,0 +1,23 @@
+===Thank You for Downloading Our Mother's Day theme for Elgg===
+
+This is a free theme for elgg, You can modify this freely distribute this. But please keep the link our link in the footer. Thank you
+
+===Installation===
+
+Unzip
+Upload to mod folder and enable in administration panel
+
+=========================================================
+
+Looking for Elgg custom support? Pluggin Development? Theme Development? Elgg hosting? Visit www.webgalli.com
+
+=========================================================
+
+More free and premium themes for elgg available at www.webgalli.com
+
+We also provide Elgg hosting starting from $5/month with free technical support and elgg install.
+
+=========================================================
+
+===Thank You===
+Team Webgalli

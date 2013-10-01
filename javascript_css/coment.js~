@@ -1,0 +1,19 @@
+$(document).ready(function() {
+	
+	$("#showit").live("click", function(){ write("checou");
+		if(this.checked)
+			
+			//document.getElementById("cidea_"+this.val).style.display = "block";
+		else
+			document.getElementById("cidea_"+this.val).style.display = "none";
+	}
+});
+
+function show_coments(showc, idea_id)
+{
+	if(showc == "show");			
+		document.getElementById("cidea_"+idea_id).style.display = "block";
+	else			
+		document.getElementById("cidea_"+idea_id).style.display = "none";
+}
+

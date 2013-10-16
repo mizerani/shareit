@@ -18,7 +18,7 @@ body {
 }
 
 a {
-  color: #05d;
+  color: #A0131E;
 }
 
 a:hover,
@@ -77,7 +77,7 @@ blockquote {
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
-	color: #28f;
+	color: #000;
   line-height: 1.1em;
   padding-bottom: 5px;
 }
@@ -91,7 +91,7 @@ h6 { font-size: 0.8em; }
 
 .elgg-heading-site, .elgg-heading-site:hover {
   display: inline-block;
-	font-size: 2em;
+	font-size: 1.7em;
   font-weight: normal;
 	line-height: 1.5em;
   letter-spacing: 2px;

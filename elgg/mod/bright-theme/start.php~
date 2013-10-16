@@ -3,9 +3,13 @@ elgg_register_event_handler('init', 'system', 'bright_theme_init');
 
 function bright_theme_init() {
 	elgg_unregister_menu_item('topbar', 'elgg_logo');
-  
-	elgg_register_menu_item('topbar', array('name'=>'shares', 'text'=>'<img src="http://www.lecom.dcc.ufmg.br/shareit/elgg/mod/bright-theme/graphics/share_topbar.png" title="Shares" >', 'href'=>'/activity'));
-	elgg_register_menu_item('topbar', array('name'=>'groups', 'text'=>'<img src="http://www.lecom.dcc.ufmg.br/shareit/elgg/mod/bright-theme/graphics/group_topbar.png" title="Groups" >', 'href'=>'/groups/all'));
-
+	
+	elgg_register_menu_item('topbar', array(
+			'href' => "#",
+			'name' => 'account',
+			//'priority' => 1000,
+			'section' => 'alt',
+			'text' => 'Options',
+	));
 }
 ?>

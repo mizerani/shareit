@@ -25,26 +25,17 @@ echo elgg_view('input/plaintext', array(
 	'name' => 'body',
 	'class' => 'mtm',
 	'id' => 'thewire-textarea',
-	'style' =>'margin-top: 0px;'
 ));
 ?>
 <div id="thewire-characters-remaining">
 	<span>140</span> <?php echo elgg_echo('thewire:charleft'); ?>
 </div>
-<div class="elgg-foot mts" style="
-    margin-top: 0px;"
->
+<div class="elgg-foot mts">
 <?php
 
-//echo elgg_view('input/submit', array(
-//	'value' => 'Explain...',
-//	'id' => 'thewire-submit-button',
-//));
-
 echo elgg_view('input/submit', array(
-	'value' => $text,
+	'value' => 'Share',
 	'id' => 'thewire-submit-button',
 ));
-
 ?>
 </div>

@@ -8,8 +8,7 @@
 The Wire
 *********************************/
 #thewire-textarea {
-	height: 40px;
-	padding: 10px;
+	height: 10px;
 }
 #thewire-characters-remaining {
 	text-align: right;

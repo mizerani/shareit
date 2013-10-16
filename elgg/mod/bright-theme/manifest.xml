@@ -15,8 +15,21 @@
 		<type>elgg_version</type>
 		<version>1.8</version>
 	</requires>
-	
-	
+	<requires>
+		<type>priority</type>
+		<priority>before</priority>
+		<plugin>profile</plugin>
+	</requires>
+	<requires>
+		<type>priority</type>
+		<priority>before</priority>
+		<plugin>groups</plugin>
+	</requires>
+	<requires>
+		<type>priority</type>
+		<priority>before</priority>
+		<plugin>thewire</plugin>
+	</requires>
 	<suggests>
 		<type>plugin</type>
 		<name>profile</name>

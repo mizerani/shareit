@@ -21,7 +21,7 @@
 }
 .elgg-page-default .elgg-page-header > .elgg-inner {
 	width: 990px;
-	height: 150px;
+	height: 40px;
 	margin: 0 auto;
 	background: transparent url(<?php echo elgg_get_site_url(); ?>mod/bright-theme/graphics/header-gradients.png) no-repeat top left;
 }

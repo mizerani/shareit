@@ -25,7 +25,7 @@ $title = elgg_extract('title', $vars, '');
 if (!$title) {
 	$title = elgg_echo($context);
 }
-//$title = elgg_view_title($title, array('class' => 'elgg-heading-main'));
+$title = elgg_view_title($title, array('class' => 'elgg-heading-main'));
 
 if (isset($vars['buttons']) && $vars['buttons']) {
 	$buttons = $vars['buttons'];
@@ -35,9 +35,3 @@ if (isset($vars['buttons']) && $vars['buttons']) {
 		'class' => 'elgg-menu-hz',
 	));
 }
-
-echo <<<HTML
-<div class="elgg-head clearfix">
-	$title$buttons
-</div>
-HTML;

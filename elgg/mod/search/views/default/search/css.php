@@ -11,8 +11,9 @@ Search plugin
 .elgg-search-header {
 	bottom: 5px;
 	height: 23px;
-	position: absolute;
+<?php	//position: absolute;?>
 	right: 0;
+	margin-bottom: 20px;
 }
 .elgg-search input[type=text] {
 	width: 230px;
@@ -25,12 +26,12 @@ Search plugin
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	
-	border: 1px solid #71b9f7;
+	border: 1px solid #006F00;
 	color: white;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 2px 4px 2px 26px;
-	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/elgg_sprites.png) no-repeat 2px -934px;
+	background: rgb(156, 156, 156)  url(<?php echo elgg_get_site_url(); ?>_graphics/elgg_sprites.png) no-repeat 2px -934px;
 }
 .elgg-search input[type=text]:focus, .elgg-search input[type=text]:active {
 	background-color: white;

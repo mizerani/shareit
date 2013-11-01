@@ -20,6 +20,13 @@ echo '<table class = "shareit-topbar"> <tr>';
 	echo '<td class = "shareit-box" style = "width: 555px;">';
 		echo elgg_view_form('thewire/add', $form_vars);
 	echo '</td>';
+	elgg_register_menu_item('topbar', array(
+			'href' => "#",
+			'name' => 'account',
+			//'priority' => 1000,
+			'section' => 'alt',
+			'text' => 'Options',
+	));
 } 
 elgg_unregister_menu_item('topbar', 'profile');
 elgg_unregister_menu_item('topbar', 'logout');
@@ -46,7 +53,7 @@ if($user){
 	elgg_register_menu_item('topbar', 
 		array('name'=>'shares', 
 		'text'=>'<img src="http://www.lecom.dcc.ufmg.br/shareit/elgg/mod/bright-theme/graphics/share_topbar.png" title="Shares" >', 
-		'href'=>'/activity', 
+		'href'=>'thewire/all', 
 		'section' => 'alt')
 	);
 	

@@ -52,8 +52,8 @@ if($user){
 	//Shares
 	elgg_register_menu_item('topbar', 
 		array('name'=>'shares', 
-		'text'=>'<img src="http://www.lecom.dcc.ufmg.br/shareit/elgg/mod/bright-theme/graphics/share_topbar.png" title="Shares" >', 
-		'href'=>'/activity', 
+		'text'=>'<img src="http://www.lecom.dcc.ufmg.br/shareit/elgg/mod/bright-theme/graphics/shares.png" title="Shares" >', 
+		'href'=>'thewire/all', 
 		'section' => 'alt')
 	);
 	

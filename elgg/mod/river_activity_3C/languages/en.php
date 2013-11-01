@@ -229,7 +229,13 @@ $english = array(
     'river_activity_3C:thankyou' => 'Thank you very much for downloading 3C River Activity. Your Comments and Suggestions are always welcome and You are always free to contact Me for any Support or Modification Through My <a href="http://satheesh.anushaktinagar.net" target="_blank"><font color="blue"><b>Personal website</b></font></a>',
 //Elgg Community
     'river_activity_3C:3C_support' => '<b><font color="blue">I don\'t want either donations or credits for this plugin. Only thing I want is a recommendation in the ELGG Community Site, which cost you nothing. If this plugin is useful for you, Please do a recommendation for this plugin in ELGG community and hence you are helping other members to find and download this plugin. Thank You.</font> <a href="http://community.elgg.org/plugins/844663/1.8.15/3-column-river-activity" target="_blank"><font color="red">Click to do a Recommendation for this Plugin</font></a></b>',
+
+//Search
+	'river_activity_3C:searchplugin' => 'Search Plugin',
+	'river_activity_3C:show_searchplugin' => 'Show search box in 3C River Activity Page',
+
   );
+
 					
 add_translation("en", $english);
 

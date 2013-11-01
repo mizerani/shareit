@@ -16,7 +16,7 @@ elgg_push_breadcrumb(elgg_echo('friends'));
 
 if (elgg_get_logged_in_user_guid() == $owner->guid) {
 	$form_vars = array('class' => 'thewire-form');
-	$content = elgg_view_form('thewire/add', $form_vars);
+	//$content = elgg_view_form('thewire/add', $form_vars);
 	$content .= elgg_view('input/urlshortener');
 }
 

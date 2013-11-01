@@ -74,13 +74,13 @@ elgg.register_hook_handler('init', 'system', elgg.topbar.init);</script>
 		</div>
 	</div>
 	
-	<?php /*if (elgg_is_logged_in()){ 
+	<?php if (elgg_is_logged_in()){ ?>
 	<div class="elgg-page-header">
 		<div class="elgg-inner">
-			php //echo $header; 
+			<?php echo $header; ?>
 		</div>
 	</div>
-	<?php } */?>
+	<?php } ?>
 	<div class="elgg-page-messages">
 		<?php echo $messages; ?>
 	</div>

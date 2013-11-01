@@ -28,6 +28,9 @@ echo elgg_view('input/plaintext', array(
 	'style' =>'margin-top: 0px;'
 ));
 ?>
+<div id="thewire-characters-remaining">
+	<span>140</span> <?php echo elgg_echo('thewire:charleft'); ?>
+</div>
 <div class="elgg-foot mts" style="
     margin-top: 0px;"
 >
@@ -39,13 +42,11 @@ echo elgg_view('input/plaintext', array(
 //));
 
 echo elgg_view('input/submit', array(
-	'value' => $text,
+	'value' => '    Share',
+	'style' => 'background:url(http://www.lecom.dcc.ufmg.br/shareit/elgg/mod/bright-theme/graphics/share_topbar.png) no-repeat backgroud-color: "#08682A"',
 	'id' => 'thewire-submit-button',
+	'padding' => '0px 0px 0px 30px',
 ));
 
 ?>
 </div>
-<div id="thewire-characters-remaining">
-	<span>140</span> <?php echo elgg_echo('thewire:charleft'); ?>
-</div>
-

@@ -10,7 +10,6 @@ Search plugin
 ***********************************/
 .elgg-search-header {
 	bottom: 5px;
-	position: absolute;
 	right: 5px;
   z-index: 1;
 }

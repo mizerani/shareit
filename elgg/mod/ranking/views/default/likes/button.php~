@@ -1,0 +1,39 @@
+<?php
+/**
+ * Elgg likes button
+ *
+ * @uses $vars['entity']
+ */
+
+if (!isset($vars['entity'])) {
+	return true;
+}
+
+$guid = $vars['entity']->getGUID();
+
+// check to see if the user has already liked this
+if (elgg_is_logged_in() && $vars['entity']->canAnnotate(0, 'likes')) {
+	if (!elgg_annotation_exists($guid, 'likes')) {
+		$url = elgg_get_site_url() . "action/likes/add?guid={$guid}";
+		$params = array(
+			'href' => $url,
+			'text' => '<img src="http://www.lecom.dcc.ufmg.br/shareit/elgg/mod/likes/graphics/sponsor.png">',
+			'title' => 'Sponsor This',
+			'is_action' => true,
+			'is_trusted' => true,
+		);
+		$likes_button = elgg_view('output/url', $params);
+	} else {
+		$url = elgg_get_site_url() . "action/likes/delete?guid={$guid}";
+		$params = array(
+			'href' => $url,
+			'text' => '<img src="http://www.lecom.dcc.ufmg.br/shareit/elgg/mod/likes/graphics/unsponsor.png">',
+			'title' => 'Unsponsor This',
+			'is_action' => true,
+			'is_trusted' => true,
+		);
+		$likes_button = elgg_view('output/url', $params);
+	}
+}
+
+echo $likes_button;

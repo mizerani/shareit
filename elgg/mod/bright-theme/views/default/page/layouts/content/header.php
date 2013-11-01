@@ -35,3 +35,9 @@ if (isset($vars['buttons']) && $vars['buttons']) {
 		'class' => 'elgg-menu-hz',
 	));
 }
+
+echo <<<HTML
+<div class="elgg-head clearfix">
+	$buttons
+</div>
+HTML;

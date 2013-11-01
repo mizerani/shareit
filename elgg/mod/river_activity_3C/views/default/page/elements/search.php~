@@ -1,0 +1,9 @@
+<?php
+/**
+ * Share IT search box
+ */
+
+// link back to main site.
+
+echo elgg_view('search/search_box', array('class' => 'elgg-search-header'));
+

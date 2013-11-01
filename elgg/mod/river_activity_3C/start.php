@@ -44,10 +44,18 @@ if (elgg_get_plugin_setting('send_wishes','river_activity_3C') == 'yes'){
     
 
 //Extend the views in sidebar and sidebar_alt
-if ((elgg_is_logged_in()) && (elgg_get_context() == 'activity')){
+if ((elgg_is_logged_in()) && (elgg_get_context() == 'thewire')){
     
     $default = '700';
     elgg_load_js('auto_river_activity');
+
+    //Shows Search
+    if (elgg_get_plugin_setting('show_searchplugin','river_activity_3C') == 'yes'){
+    if (elgg_get_plugin_setting('searchplugin_pos','river_activity_3C') == 'left'){
+        elgg_extend_view('page/elements/sidebar_alt', 'page/elements/search',$default + (int)elgg_get_plugin_setting('searchplugin_pir','river_activity_3C'));
+    }else{
+        elgg_extend_view('page/elements/sidebar', 'page/elements/search',$default + (int)elgg_get_plugin_setting('searchplugin_pir','river_activity_3C'));
+    }}
     
     //Showing Site Status
     if (elgg_get_plugin_setting('show_status','river_activity_3C') == 'yes'){
@@ -205,8 +213,7 @@ if ((elgg_is_logged_in()) && (elgg_get_context() == 'activity')){
     }else{
         elgg_extend_view('page/elements/sidebar', 'page/elements/birthdays',$default + (int)elgg_get_plugin_setting('birthday_pir','river_activity_3C'));
     }}
-           
-
+    
 //Middle Column
     //Shows System Messages
     if (elgg_get_plugin_setting('show_system_messages', 'river_activity_3C') == 'yes'){

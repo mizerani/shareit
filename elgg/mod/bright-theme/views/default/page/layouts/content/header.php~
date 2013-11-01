@@ -37,7 +37,7 @@ if (isset($vars['buttons']) && $vars['buttons']) {
 }
 
 echo <<<HTML
-<div class="elgg-head clearfix">
-	$title$buttons
-</div>
+<!--div class="elgg-head clearfix">
+	$buttons
+</div--!>
 HTML;

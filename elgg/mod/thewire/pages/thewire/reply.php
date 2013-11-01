@@ -15,7 +15,7 @@ elgg_push_breadcrumb($title);
 
 $content = elgg_view('thewire/reply', array('post' => $post));
 $form_vars = array('class' => 'thewire-form');
-$content .= elgg_view_form('thewire/add', $form_vars, array('post' => $post));
+$content .= elgg_view_form('thewire/replyAdd', $form_vars, array('post' => $post));
 $content .= elgg_view('input/urlshortener');
 
 

@@ -91,9 +91,9 @@
 }
 .elgg-sidebar {
 	position: relative;
-	padding: 20px 15px;
+	padding: 20px 0px;
 	float: right;
-	width: 200px;
+	width: 230px;
 	margin: 0;
 }
 .elgg-sidebar-alt {

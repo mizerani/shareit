@@ -49,6 +49,14 @@ if ((elgg_is_logged_in()) && (elgg_get_context() == 'thewire')){
     $default = '700';
     elgg_load_js('auto_river_activity');
 
+    //Shows Activity
+    if (elgg_get_plugin_setting('show_activity','river_activity_3C') == 'yes'){
+    if (elgg_get_plugin_setting('activity_pos','river_activity_3C') == 'left'){
+        elgg_extend_view('page/elements/sidebar_alt', 'page/elements/activity',$default + (int)elgg_get_plugin_setting('activity_pir','river_activity_3C'));
+    }else{
+        elgg_extend_view('page/elements/sidebar', 'page/elements/activity',$default + (int)elgg_get_plugin_setting('activity_pir','river_activity_3C'));
+    }}
+
     //Shows Search
     if (elgg_get_plugin_setting('show_searchplugin','river_activity_3C') == 'yes'){
     if (elgg_get_plugin_setting('searchplugin_pos','river_activity_3C') == 'left'){

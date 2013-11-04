@@ -233,6 +233,10 @@ $english = array(
 //Search
 	'river_activity_3C:searchplugin' => 'Search Plugin',
 	'river_activity_3C:show_searchplugin' => 'Show search box in 3C River Activity Page',
+	
+	//Share IT Activity
+	'river_activity_3C:activity' => 'Share IT Activity',
+	'river_activity_3C:show_activity' => 'Show activity box in 3C River Activity Page',
 
   );
 

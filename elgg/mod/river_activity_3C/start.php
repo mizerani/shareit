@@ -57,6 +57,14 @@ if ((elgg_is_logged_in()) && (elgg_get_context() == 'thewire')){
         elgg_extend_view('page/elements/sidebar', 'page/elements/activity',$default + (int)elgg_get_plugin_setting('activity_pir','river_activity_3C'));
     }}
 
+    //Shows Ranking
+    if (elgg_get_plugin_setting('show_ranking','river_activity_3C') == 'yes'){
+    if (elgg_get_plugin_setting('ranking_pos','river_activity_3C') == 'left'){
+        elgg_extend_view('page/elements/sidebar_alt', 'page/elements/ranking',$default + (int)elgg_get_plugin_setting('ranking_pir','river_activity_3C'));
+    }else{
+        elgg_extend_view('page/elements/sidebar', 'page/elements/ranking',$default + (int)elgg_get_plugin_setting('ranking_pir','river_activity_3C'));
+    }}
+
     //Shows Search
     if (elgg_get_plugin_setting('show_searchplugin','river_activity_3C') == 'yes'){
     if (elgg_get_plugin_setting('searchplugin_pos','river_activity_3C') == 'left'){

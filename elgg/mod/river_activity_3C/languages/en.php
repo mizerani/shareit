@@ -238,6 +238,10 @@ $english = array(
 	'river_activity_3C:activity' => 'Share IT Activity',
 	'river_activity_3C:show_activity' => 'Show activity box in 3C River Activity Page',
 
+	//Share IT Ranking
+	'river_activity_3C:ranking' => 'Share IT Ranking',
+	'river_activity_3C:show_ranking' => 'Show ranking box in 3C River Activity Page',
+
   );
 
 					

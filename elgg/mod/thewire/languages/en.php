@@ -10,6 +10,7 @@ $english = array(
 	 */
 	'thewire' => "Shares",
 	'thewire:everyone' => "All shares",
+	'thewire:ranking' => "Shares Ranking",
 	'thewire:user' => "%s's shares",
 	'thewire:friends' => "Follows' shares",
 	'thewire:reply' => "Reply",

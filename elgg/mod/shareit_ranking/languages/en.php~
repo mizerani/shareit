@@ -14,8 +14,8 @@ $english = array(
 	'likes:alreadyliked' => 'You have already sponsored this item',
 	'likes:notfound' => 'The item you are trying to sponsor cannot be found',
 	'likes:likethis' => 'Sponsor this',
-	'likes:userlikedthis' => '%s sponsor',
-	'likes:userslikedthis' => '%s sponsors',
+	'likes:userlikedthis' => '%s sponsors',
+	'likes:userslikedthis' => '%s sponsor',
 	'likes:river:annotate' => 'sponsor',
 	'likes:delete:confirm' => 'Are you sure you want to delete this sponsorship?',
 

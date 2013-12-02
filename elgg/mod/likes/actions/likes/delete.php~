@@ -24,7 +24,7 @@ if (!$like) {
 if ($like && $like->canEdit()) {
 	if (elgg_is_active_plugin('shareit_ranking')){
 		//Elimina pontuação do Ranking
-		$result = shareit_update_ranking((int) get_input('guid'), -1);
+		$result = shareit_update_ranking($entity->guid, -1);
 		if($result != false){
 			$like->delete();
 			system_message(elgg_echo("likes:deleted"));

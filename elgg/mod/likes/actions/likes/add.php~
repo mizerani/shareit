@@ -44,6 +44,7 @@ if (elgg_is_active_plugin('shareit_ranking')){
 	
 	//Se falhar elimina o like
 	if($result == false){
+		register_error(elgg_echo("likes:failure"));
 		$like = NULL;
 
 		if (!$like) {
@@ -57,7 +58,7 @@ if (elgg_is_active_plugin('shareit_ranking')){
 	
 		if ($like && $like->canEdit()) {
 			$like->delete();
-			register_error(elgg_echo("likes:failure"));
+			system_message(elgg_echo("likes:deleted"));
 			forward(REFERER);
 		}
 	}

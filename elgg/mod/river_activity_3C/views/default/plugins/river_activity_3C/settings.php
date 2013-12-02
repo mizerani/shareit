@@ -864,6 +864,33 @@ echo "<h3>".elgg_echo('river_activity_3C:activity')."</h3>";
     echo "</div>";
 
 
+//Show Ranking
+echo "<h3>".elgg_echo('river_activity_3C:ranking')."</h3>";
+    echo '<div class="admin_settings">'.elgg_echo('river_activity_3C:show_ranking').'  :  ';
+    echo elgg_view('input/dropdown', array(
+            'name' => 'params[show_ranking]',
+            'options_values' => array(
+                    'no' => elgg_echo('river_activity_3C:no'),
+                    'yes' => elgg_echo('river_activity_3C:yes')
+            ),
+            'value' => $vars['entity']->show_ranking,
+            ));
+    echo '<br />'.elgg_echo('river_activity_3C:pos').'  :  ';
+    echo elgg_view('input/dropdown', array(
+            'name' => 'params[ranking_pos]',
+            'options_values' => array(
+                    'right' => elgg_echo('river_activity_3C:right'),
+                    'left' => elgg_echo('river_activity_3C:left')
+            ),
+            'value' => $vars['entity']->ranking_pos,
+            ));
+    echo "<br />".elgg_echo('river_activity_3C:pir')." : ";
+    echo elgg_view('input/text', array(
+            'name' => "params[ranking_pir]",
+            'value' => $vars['entity']->ranking_pir,
+            ));
+    echo "</div>";
+
 //System Message
     
     echo "<h3>".elgg_echo('river_activity_3C:system_message')."</h3>";

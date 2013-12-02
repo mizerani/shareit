@@ -98,6 +98,10 @@ function thewire_page_handler($page) {
 		case "all":
 			include "$base_dir/everyone.php";
 			break;
+			
+		case "ranking":
+			include "$base_dir/ranking.php";
+			break;
 
 		case "friends":
 			include "$base_dir/friends.php";

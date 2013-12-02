@@ -101,8 +101,9 @@
 }
 .elgg-module-featured > .elgg-head {
 	padding: 7px 15px;
-	background-color: #28d;
-  border-bottom: 1px solid #06b;
+	background-color: #08683A;
+  border-bottom: 1px solid #08683A;
+  	width: 228px;
 }
 .elgg-module-featured > .elgg-head * {
 	color: #fff;

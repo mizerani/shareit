@@ -1,14 +1,14 @@
 <?php
 /**
  * Elgg topbar
- * The standard elgg top toolbar
+ * The standard shareit top toolbar
  */
 
 $site = elgg_get_site_entity();
 //$site_name = $site->name;
 $site_url = elgg_get_site_url();
 echo '<table class = "shareit-topbar"> <tr>';
-	
+	//Adiciona logo
 	echo '<td class = "shareit-topbar-logo" style = "width: 194px;">';
 ?>
 		<a class="elgg-heading-site" href="<?php echo $site_url; ?>">
@@ -17,17 +17,19 @@ echo '<table class = "shareit-topbar"> <tr>';
 <?
 	echo '</td>';
 	if (elgg_is_logged_in()){ 
+	//adciona caixa da ideia
 	echo '<td class = "shareit-box" style = "width: 555px;">';
 		echo elgg_view_form('thewire/add', $form_vars);
 	echo '</td>';
+	//Menu Dropdown
 	elgg_register_menu_item('topbar', array(
 			'href' => "#",
 			'name' => 'account',
-			//'priority' => 1000,
 			'section' => 'alt',
 			'text' => 'Options',
 	));
 } 
+//desresgistra dados
 elgg_unregister_menu_item('topbar', 'profile');
 elgg_unregister_menu_item('topbar', 'logout');
 elgg_unregister_menu_item('topbar', 'administration');
